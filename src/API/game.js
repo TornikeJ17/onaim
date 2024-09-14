@@ -197,4 +197,18 @@ const gameSVG = [
         ),
     },
 ];
-export { gameSVG };
+const gameList = [
+    { id: 1, title: "GOLDEN CATCH", img: require("../Img/goldencatch.png") },
+    { id: 2, title: "BASS BOSS", img: require("../Img/bassboss.png") },
+    { id: 3, title: "ZEUS III", img: require("../Img/zeusiii.png") },
+    { id: 4, title: "GEMZA", img: require("../Img/gemza.png") },
+    { id: 5, title: "RED HOT LUCK", img: require("../Img/redhotluck.png") },
+    { id: 6, title: "WILD VOODOO", img: require("../Img/wildvoodoo.png") },
+];
+const gamesTab = [
+    { id: 1, title: "All Games" },
+    { id: 2, title: "Slots" },
+    { id: 3, title: "Fish Hunter" },
+    { id: 4, title: "Wheel" },
+];
+export { gameSVG, gameList, gamesTab };

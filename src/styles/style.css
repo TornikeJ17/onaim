@@ -21,5 +21,8 @@ body {
     width: 1821px;
     height: 100vh;
     padding-left: 79px;
-    overflow-y: scroll;
+    overflow-y: auto;
+}
+.main-content::-webkit-scrollbar {
+    display: none;
 }

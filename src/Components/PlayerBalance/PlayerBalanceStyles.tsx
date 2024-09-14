@@ -19,7 +19,8 @@ export const PlayerBalanceContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    grid-column: 0;
+    grid-column: 2/2;
+    height: 298px;
     h2 {
         color: #189541;
         font-family: Satoshi;
@@ -34,10 +35,24 @@ export const BalanceInfo = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background: #00141e;
+    height: 172px;
+    border-radius: 12px;
+    padding: 16px;
     div {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 64px;
+        padding: 12px 8px 12px 8px;
+        background-color: #283740;
+        border-radius: 8px;
+        box-shadow: 0px 4px 24px 0px #00000040;
+        span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
     }
     p {
         margin: 0;
@@ -57,7 +72,11 @@ export const BalanceButton = styled.button`
 `;
 
 export const SeeMore = styled.p`
-    color: #00a8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #189541;
     text-align: center;
     cursor: pointer;
     &:hover {

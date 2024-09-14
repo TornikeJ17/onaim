@@ -10,6 +10,8 @@ import Leaderboards from "../../Pages/Leaderboards/Leaderboards";
 const Section: React.FC<SectionProps> = ({
     tabMenuActive,
     setTabMenuActive,
+    gameTabMenuActive,
+    setGameTabMenuActive,
 }) => {
     return (
         <Container>
@@ -20,9 +22,17 @@ const Section: React.FC<SectionProps> = ({
                 setTabMenuActive={setTabMenuActive}
             />
             <Routes>
-                <Route path="/Games" element={<Games />} />
+                <Route
+                    path="/Games"
+                    element={
+                        <Games
+                            gameTabMenuActive={gameTabMenuActive}
+                            setGameTabMenuActive={setGameTabMenuActive}
+                        />
+                    }
+                />
                 <Route path="/Leaderboards" element={<Leaderboards />} />
-                <Route path="/Missions" element={<Games />} />
+                <Route path="/Missions" element={<div></div>} />
             </Routes>
         </Container>
     );

@@ -1,6 +1,6 @@
-interface GamesProps {
+interface GamesTabProps {
     gameTabMenuActive: number | null;
     setGameTabMenuActive: (id: number) => void;
 }
 
-export type { GamesProps };
+export type { GamesTabProps };

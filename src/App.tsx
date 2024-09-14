@@ -5,9 +5,12 @@ import Navbar from "./Components/Navbar/Navbar";
 import Section from "./Components/Section/Section";
 
 const App: React.FC = () => {
-    const breakpoints = useResponsiveTSX([600, 900, 1200]);
+    const breakpoints = useResponsiveTSX([600, 1024, 1440]);
     const [isActive, setIsActive] = useState<number | null>(null);
     const [tabMenuActive, setTabMenuActive] = useState<number | null>(null);
+    const [gameTabMenuActive, setGameTabMenuActive] = useState<number | null>(
+        null
+    );
 
     // Function to decide the layout based on breakpoint
     const getLayout = () => {
@@ -23,6 +26,8 @@ const App: React.FC = () => {
                         <Section
                             tabMenuActive={tabMenuActive}
                             setTabMenuActive={setTabMenuActive}
+                            gameTabMenuActive={gameTabMenuActive}
+                            setGameTabMenuActive={setGameTabMenuActive}
                         />
                     </div>
                 );
@@ -39,6 +44,8 @@ const App: React.FC = () => {
                             <Section
                                 tabMenuActive={tabMenuActive}
                                 setTabMenuActive={setTabMenuActive}
+                                gameTabMenuActive={gameTabMenuActive}
+                                setGameTabMenuActive={setGameTabMenuActive}
                             />
                         </div>
                     </div>
@@ -57,6 +64,8 @@ const App: React.FC = () => {
                                 <Section
                                     tabMenuActive={tabMenuActive}
                                     setTabMenuActive={setTabMenuActive}
+                                    gameTabMenuActive={gameTabMenuActive}
+                                    setGameTabMenuActive={setGameTabMenuActive}
                                 />
                             </div>
                         </div>
@@ -76,6 +85,8 @@ const App: React.FC = () => {
                                 <Section
                                     tabMenuActive={tabMenuActive}
                                     setTabMenuActive={setTabMenuActive}
+                                    gameTabMenuActive={gameTabMenuActive}
+                                    setGameTabMenuActive={setGameTabMenuActive}
                                 />
                             </div>
                         </div>
