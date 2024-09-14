@@ -14,15 +14,9 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-
-.main-content {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    width: 1821px;
-    height: 100vh;
-    padding-left: 79px;
-    overflow-y: auto;
+.block2 {
+    overflow-y: scroll;
 }
-.main-content::-webkit-scrollbar {
+.block2::-webkit-scrollbar {
     display: none;
 }
