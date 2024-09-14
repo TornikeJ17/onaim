@@ -1,0 +1,25 @@
+body {
+    font-family: "BPG Nino Mtavruli", sans-serif;
+    font-style: normal;
+    background-color: #00141e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 79px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 1821px;
+    height: 100vh;
+    padding-left: 79px;
+    overflow-y: scroll;
+}
