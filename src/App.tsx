@@ -11,6 +11,9 @@ const App: React.FC = () => {
     const [gameTabMenuActive, setGameTabMenuActive] = useState<number | null>(
         null
     );
+    const [leaderboardTabActive, setLeaderboardTabActive] = useState<
+        number | null
+    >(null);
 
     return (
         <div className={`App breakpoint-${breakpoint}`}>
@@ -26,6 +29,8 @@ const App: React.FC = () => {
                         setTabMenuActive={setTabMenuActive}
                         gameTabMenuActive={gameTabMenuActive}
                         setGameTabMenuActive={setGameTabMenuActive}
+                        leaderboardTabActive={leaderboardTabActive}
+                        setLeaderboardTabActive={setLeaderboardTabActive}
                     />
                 </div>
             </>

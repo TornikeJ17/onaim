@@ -2,6 +2,7 @@ const tabMenuList = [
     {
         id: 1,
         title: "Games",
+        url: "/",
         svg: (
             <svg
                 width="18"
@@ -20,6 +21,7 @@ const tabMenuList = [
     {
         id: 2,
         title: "Leaderboards",
+        url: "Leaderboards",
         svg: (
             <svg
                 width="20"
@@ -50,6 +52,7 @@ const tabMenuList = [
     {
         id: 3,
         title: "Missions",
+        url: "Missions",
         svg: (
             <svg
                 width="20"
@@ -66,5 +69,19 @@ const tabMenuList = [
         ),
     },
 ];
+const leaderBoardTab = [
+    {
+        id: 1,
+        title: "Leaderboard1",
+    },
+    {
+        id: 2,
+        title: "Leaderboard2",
+    },
+    {
+        id: 3,
+        title: "Leaderboard3",
+    },
+];
 
-export { tabMenuList };
+export { tabMenuList, leaderBoardTab };

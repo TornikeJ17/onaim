@@ -7,11 +7,14 @@ import { SectionProps } from "./SectionInterface";
 import { Route, Routes } from "react-router-dom";
 import Games from "../../Pages/Games/Games";
 import Leaderboards from "../../Pages/Leaderboards/Leaderboards";
+import Missions from "../../Pages/Missions/Missions";
 const Section: React.FC<SectionProps> = ({
     tabMenuActive,
     setTabMenuActive,
     gameTabMenuActive,
     setGameTabMenuActive,
+    leaderboardTabActive,
+    setLeaderboardTabActive,
 }) => {
     return (
         <Container>
@@ -23,7 +26,7 @@ const Section: React.FC<SectionProps> = ({
             />
             <Routes>
                 <Route
-                    path="/Games"
+                    path="/"
                     element={
                         <Games
                             gameTabMenuActive={gameTabMenuActive}
@@ -31,8 +34,27 @@ const Section: React.FC<SectionProps> = ({
                         />
                     }
                 />
-                <Route path="/Leaderboards" element={<Leaderboards />} />
-                <Route path="/Missions" element={<div></div>} />
+                <Route
+                    path="/Leaderboards"
+                    element={
+                        <Leaderboards
+                            leaderboardTabActive={leaderboardTabActive}
+                            setLeaderboardTabActive={setLeaderboardTabActive}
+                        />
+                    }
+                />
+                <Route
+                    path="/Missions"
+                    element={
+                        <>
+                            <Missions />{" "}
+                            <Games
+                                gameTabMenuActive={gameTabMenuActive}
+                                setGameTabMenuActive={setGameTabMenuActive}
+                            />
+                        </>
+                    }
+                />
             </Routes>
         </Container>
     );

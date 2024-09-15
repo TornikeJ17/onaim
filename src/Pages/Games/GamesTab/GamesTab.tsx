@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { gamesTab } from "../../../API/game";
 import { GamesTabBlock, GamesTabContainer } from "./GamesTabStyles";
 import { GamesTabProps } from "./GamesTabInterface";
@@ -7,6 +7,9 @@ const GamesTab: React.FC<GamesTabProps> = ({
     gameTabMenuActive,
     setGameTabMenuActive,
 }) => {
+    useEffect(() => {
+        if (gameTabMenuActive === null) setGameTabMenuActive(1);
+    }, []);
     const handleClick = (id: number) => {
         if (id) setGameTabMenuActive(id);
     };

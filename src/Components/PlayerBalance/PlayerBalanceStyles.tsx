@@ -59,12 +59,15 @@ export const BalanceInfo = styled.div`
     }
 `;
 
-export const BalanceButton = styled.button`
-    padding: 5px 10px;
-    background-color: #189541;
+export const BalanceButton = styled.button<{ button: number }>`
+    width: 89px;
+    height: 40px;
+    padding: 10px 16px 10px 16px;
+    background-color: ${({ button }) =>
+        button === 2 ? "#189541" : "transparent"};
     color: white;
-    border: none;
-    border-radius: 5px;
+    border: ${({ button }) => (button === 1 ? "1px solid #189541" : "none")};
+    border-radius: 48px;
     cursor: pointer;
     &:hover {
         background-color: #107a31;

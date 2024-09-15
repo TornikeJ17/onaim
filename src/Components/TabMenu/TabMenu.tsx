@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TabMenuContainer, LI, GroupMenu } from "./TabMenuStyles";
 import { tabMenuList } from "../../API/tabmenu";
 import { TabMenuProps } from "./TabMenuInterface";
@@ -7,6 +7,9 @@ const TabMenu: React.FC<TabMenuProps> = ({
     tabMenuActive,
     setTabMenuActive,
 }) => {
+    useEffect(() => {
+        if (tabMenuActive === null) setTabMenuActive(1);
+    }, []);
     const handleClick = (id: number) => {
         if (id) setTabMenuActive(id);
     };
@@ -15,7 +18,7 @@ const TabMenu: React.FC<TabMenuProps> = ({
             <div>
                 <ul>
                     {tabMenuList.map((item, index) => (
-                        <NavLink to={item.title}>
+                        <NavLink to={item.url}>
                             <LI
                                 onClick={() => handleClick(item.id)}
                                 tabMenuActive={tabMenuActive === item.id}

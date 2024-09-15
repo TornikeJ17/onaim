@@ -13,11 +13,11 @@ const PlayerBalance: React.FC = () => {
             <h2>Player's Balance</h2>
             <BalanceInfo>
                 <div>
-                    <span>
+                    <>
                         {gameSVG[0].svg}
                         <p>12 Freespins</p>
-                    </span>
-                    <BalanceButton>Withdraw</BalanceButton>
+                    </>
+                    <BalanceButton button={1}>Withdraw</BalanceButton>
                 </div>
                 <div>
                     <span>
@@ -25,7 +25,7 @@ const PlayerBalance: React.FC = () => {
                         <p>8 Flash</p>
                     </span>
 
-                    <BalanceButton>Collect</BalanceButton>
+                    <BalanceButton button={2}>Collect</BalanceButton>
                 </div>
             </BalanceInfo>
             <SeeMore>
