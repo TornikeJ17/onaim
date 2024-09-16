@@ -52,11 +52,6 @@ const Section: React.FC<SectionProps> = ({
                     element={
                         <>
                             <Missions breakpoint={breakpoint} />{" "}
-                            <Games
-                                gameTabMenuActive={gameTabMenuActive}
-                                setGameTabMenuActive={setGameTabMenuActive}
-                                breakpoint={breakpoint}
-                            />
                         </>
                     }
                 />

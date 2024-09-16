@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, LI } from "./SidebarStyles";
+import { Container, LI, Item } from "./SidebarStyles";
 import { mainLogo, sideBarUrl } from "../../API/sidebar";
 import { SidebarProps } from "./SidebarInterface";
 
@@ -17,11 +17,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isActive, setIsActive }) => {
                         key={index}
                         onClick={() => handleClick(item.id)}
                     >
-                        <span>
+                        <Item isActive={isActive === item.id}>
                             {item.svg}
-                            {item.title}
-                        </span>
-                        <span></span>
+                            <span>{item.title}</span>
+                        </Item>
                     </LI>
                 ))}
             </ul>

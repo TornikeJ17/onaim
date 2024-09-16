@@ -29,8 +29,12 @@ export const MissionContent = styled.div<{ breakpoint: number }>`
             : breakpoint === 2
             ? "repeat(2, minmax(200px, 1fr))"
             : breakpoint === 3
-            ? "repeat(3, minmax(350px, 1fr))"
-            : "repeat(3, minmax(350px, 1fr))"};
+            ? "repeat(4, minmax(330px, 1fr))"
+            : "repeat(4, minmax(330px, 1fr))"};
+    padding: ${({ breakpoint }) =>
+        breakpoint === 0 || breakpoint === 1 || breakpoint === 2
+            ? "0"
+            : "20px"};
     gap: 20px;
 `;
 export const MissionBlock = styled.div<{ breakpoint: number }>`
