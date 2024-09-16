@@ -2,9 +2,8 @@ import React from "react";
 import { BannerContainer } from "./BannerStyles";
 import Button from "../Button/Button";
 import BannerImage from "../../Img/banner.png";
-import { useResponsiveTSX } from "../../useResponsive";
-const Banner: React.FC = () => {
-    const breakpoint = useResponsiveTSX([600, 1024, 1440, 1920]);
+import { BannerProps } from "./BannerInterface";
+const Banner: React.FC<BannerProps> = ({ breakpoint }) => {
     return (
         <BannerContainer breakpoint={breakpoint}>
             <div className="block">

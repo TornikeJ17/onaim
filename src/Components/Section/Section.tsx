@@ -15,14 +15,16 @@ const Section: React.FC<SectionProps> = ({
     setGameTabMenuActive,
     leaderboardTabActive,
     setLeaderboardTabActive,
+    breakpoint,
 }) => {
     return (
-        <Container>
-            <Banner />
-            <PlayerBalance />
+        <Container breakpoint={breakpoint}>
+            <Banner breakpoint={breakpoint} />
+            <PlayerBalance breakpoint={breakpoint} />
             <TabMenu
                 tabMenuActive={tabMenuActive}
                 setTabMenuActive={setTabMenuActive}
+                breakpoint={breakpoint}
             />
             <Routes>
                 <Route
@@ -31,6 +33,7 @@ const Section: React.FC<SectionProps> = ({
                         <Games
                             gameTabMenuActive={gameTabMenuActive}
                             setGameTabMenuActive={setGameTabMenuActive}
+                            breakpoint={breakpoint}
                         />
                     }
                 />
@@ -40,6 +43,7 @@ const Section: React.FC<SectionProps> = ({
                         <Leaderboards
                             leaderboardTabActive={leaderboardTabActive}
                             setLeaderboardTabActive={setLeaderboardTabActive}
+                            breakpoint={breakpoint}
                         />
                     }
                 />
@@ -47,10 +51,11 @@ const Section: React.FC<SectionProps> = ({
                     path="/Missions"
                     element={
                         <>
-                            <Missions />{" "}
+                            <Missions breakpoint={breakpoint} />{" "}
                             <Games
                                 gameTabMenuActive={gameTabMenuActive}
                                 setGameTabMenuActive={setGameTabMenuActive}
+                                breakpoint={breakpoint}
                             />
                         </>
                     }

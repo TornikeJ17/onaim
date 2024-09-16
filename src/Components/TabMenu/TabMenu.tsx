@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 const TabMenu: React.FC<TabMenuProps> = ({
     tabMenuActive,
     setTabMenuActive,
+    breakpoint,
 }) => {
     useEffect(() => {
         if (tabMenuActive === null) setTabMenuActive(1);
@@ -14,7 +15,7 @@ const TabMenu: React.FC<TabMenuProps> = ({
         if (id) setTabMenuActive(id);
     };
     return (
-        <TabMenuContainer>
+        <TabMenuContainer breakpoint={breakpoint}>
             <div>
                 <ul>
                     {tabMenuList.map((item, index) => (

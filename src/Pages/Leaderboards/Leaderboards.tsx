@@ -12,6 +12,7 @@ import { gameSVG } from "../../API/game";
 const Leaderboards: React.FC<LeaderboardProps> = ({
     leaderboardTabActive,
     setLeaderboardTabActive,
+    breakpoint,
 }) => {
     const getBadgeIcon = (badge: string | undefined) => {
         switch (badge) {
@@ -29,23 +30,24 @@ const Leaderboards: React.FC<LeaderboardProps> = ({
     const getPrizeIcon = (icon: string) => {
         switch (icon) {
             case "gems":
-                return gameSVG[0].svg; // Gem emoji
+                return gameSVG[0].svg;
             case "hearts":
-                return gameSVG[1].svg; // Heart emoji
+                return gameSVG[1].svg;
             case "clubs":
-                return gameSVG[2].svg; // Lightning emoji
+                return gameSVG[2].svg;
             default:
                 return "";
         }
     };
     return (
-        <LeaderboardsContainer>
+        <LeaderboardsContainer breakpoint={breakpoint}>
             <LeaderboardTitle>
                 <LeaderboardsButton>Leaderboard Name</LeaderboardsButton>
             </LeaderboardTitle>
             <LeaderboardTab
                 leaderboardTabActive={leaderboardTabActive}
                 setLeaderboardTabActive={setLeaderboardTabActive}
+                breakpoint={breakpoint}
             />
             <table>
                 <thead>

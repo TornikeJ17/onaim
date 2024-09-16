@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MissionContainer = styled.div<{ breakpoint: number }>`
-    width: 100%;
+    width: ${({ breakpoint }) => (breakpoint === 0 ? "77%" : "100%")};
     border-radius: 16px;
     background-color: #062733;
     grid-column: 1/1;
@@ -23,21 +23,20 @@ export const MissionContent = styled.div<{ breakpoint: number }>`
     display: grid;
     grid-template-columns: ${({ breakpoint }) =>
         breakpoint === 0
-            ? "repeat(1, 1fr)" // 1 column (full width) on mobile
+            ? "repeat(1, 1fr)"
             : breakpoint === 1
-            ? "repeat(1, minmax(150px, 1fr))" // 2 columns with a min size on tablets
+            ? "repeat(1, minmax(150px, 1fr))"
             : breakpoint === 2
-            ? "repeat(2, minmax(200px, 1fr))" // 3 columns for desktop with min size
+            ? "repeat(2, minmax(200px, 1fr))"
             : breakpoint === 3
-            ? "repeat(3, minmax(350px, 1fr))" // 4 columns for large desktop
-            : null};
+            ? "repeat(3, minmax(350px, 1fr))"
+            : "repeat(3, minmax(350px, 1fr))"};
     gap: 20px;
-    padding: 20px;
 `;
 export const MissionBlock = styled.div<{ breakpoint: number }>`
     display: grid;
     margin: 0 auto;
-    width: ${({ breakpoint }) => (breakpoint === 1 ? "338px" : "348px")};
+    max-width: 348px;
     height: 459px;
     padding: 12px;
     gap: 28px;
@@ -64,8 +63,8 @@ export const CircleImg = styled.div<{ background: string }>`
     top: 40px;
     left: 40%;
     background-image: ${({ background }) => `url(${background})`};
-    background-size: contain; /* Ensures the image fills the circle */
-    background-position: center; /* Centers the image within the circle */
+    background-size: contain; 
+    background-position: center; /
     background-repeat: no-repeat;
 `;
 

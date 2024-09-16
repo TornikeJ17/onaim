@@ -1,5 +1,7 @@
 import styled from "styled-components";
-
+interface PlayerProps {
+    breakpoint: any;
+}
 export const PlayButton = styled.button`
     padding: 10px 20px;
     background-color: #189541;
@@ -12,14 +14,37 @@ export const PlayButton = styled.button`
     }
 `;
 
-export const PlayerBalanceContainer = styled.div`
+export const PlayerBalanceContainer = styled.div<PlayerProps>`
+    width: ${({ breakpoint }) =>
+        breakpoint === 0
+            ? "68%"
+            : breakpoint === 1
+            ? ""
+            : breakpoint === 2
+            ? "2/2"
+            : "2/2"};
     background-color: #01222f;
     padding: 20px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    grid-column: 2/2;
+    grid-column: ${({ breakpoint }) =>
+        breakpoint === 0
+            ? "1/2"
+            : breakpoint === 1
+            ? "1/2"
+            : breakpoint === 2
+            ? "2/2"
+            : "2/2"};
+    order: ${({ breakpoint }) =>
+        breakpoint === 0
+            ? "-1"
+            : breakpoint === 1
+            ? "-1"
+            : breakpoint === 2
+            ? "0"
+            : "0"};
     height: 298px;
     h2 {
         color: #189541;

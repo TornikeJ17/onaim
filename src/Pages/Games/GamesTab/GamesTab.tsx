@@ -6,6 +6,7 @@ import { GamesTabProps } from "./GamesTabInterface";
 const GamesTab: React.FC<GamesTabProps> = ({
     gameTabMenuActive,
     setGameTabMenuActive,
+    breakpoint,
 }) => {
     useEffect(() => {
         if (gameTabMenuActive === null) setGameTabMenuActive(1);
@@ -14,9 +15,10 @@ const GamesTab: React.FC<GamesTabProps> = ({
         if (id) setGameTabMenuActive(id);
     };
     return (
-        <GamesTabContainer>
+        <GamesTabContainer breakpoint={breakpoint}>
             {gamesTab.map((item, index) => (
                 <GamesTabBlock
+                    breakpoint={breakpoint}
                     key={index}
                     gameTabMenuActive={gameTabMenuActive === item.id}
                     onClick={() => handleClick(item.id)}

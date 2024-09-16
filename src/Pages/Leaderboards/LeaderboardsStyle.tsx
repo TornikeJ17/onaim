@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const LeaderboardsContainer = styled.div`
-    width: 100%;
+export const LeaderboardsContainer = styled.div<{ breakpoint: number }>`
+    width: ${({ breakpoint }) => (breakpoint === 0 ? "77%" : "100%")};
     border-radius: 16px;
     background-color: #062733;
     grid-column: 1 / 1;
@@ -9,7 +9,7 @@ export const LeaderboardsContainer = styled.div`
     table {
         display: grid;
         gap: 20px;
-        width: 700px;
+        width: ${({ breakpoint }) => (breakpoint === 0 ? "92%" : "700px")};
         margin: 0 auto;
         margin-bottom: 20px;
         margin-top: 20px;

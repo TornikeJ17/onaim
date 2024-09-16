@@ -3,7 +3,8 @@ import styled from "styled-components";
 interface TabMenuProps {
     tabMenuActive: boolean;
 }
-export const TabMenuContainer = styled.div`
+export const TabMenuContainer = styled.div<{ breakpoint: number }>`
+    width: ${({ breakpoint }) => (breakpoint === 0 ? "77%" : "100%")};
     grid-column: 1 / 2;
     div {
         display: flex;
@@ -20,6 +21,11 @@ export const TabMenuContainer = styled.div`
         margin: 0;
         gap: 20px;
         padding-left: 20px;
+        overflow: hidden;
+        overflow-x: ${({ breakpoint }) => (breakpoint === 0 ? "scroll" : "")};
+        &::-webkit-scrollbar {
+            display: none;
+        }
         a {
             text-decoration: none;
             color: #fff;

@@ -1,14 +1,33 @@
 import styled from "styled-components";
 
 export const BannerContainer = styled.div<{ breakpoint: number }>`
+    width: ${({ breakpoint }) =>
+        breakpoint === 0 ? "68%" : breakpoint === 1 ? "" : ""};
     grid-column: 1 / 2;
     background-color: #01222f;
-    padding: ${({ breakpoint }) => (breakpoint === 0 ? "10px" : "20px")};
+    padding: ${({ breakpoint }) => (breakpoint === 1 ? "10px" : "20px")};
     border-radius: 16px;
     display: flex;
-    flex-flow: ${({ breakpoint }) => (breakpoint === 0 ? "column" : "wrap")};
+    flex-flow: ${({ breakpoint }) =>
+        breakpoint === 0
+            ? "column-reverse"
+            : breakpoint === 1
+            ? "column-reverse"
+            : breakpoint === 2
+            ? "wrap"
+            : "wrap"};
     align-items: center;
-    justify-content: space-between;
+    justify-content: ${({ breakpoint }) =>
+        breakpoint === 0
+            ? "center"
+            : breakpoint === 1
+            ? "center"
+            : breakpoint === 2
+            ? "space-between"
+            : "space-between"};
+    img {
+        width: 100%;
+    }
     h1 {
         font-size: ${({ breakpoint }) =>
             breakpoint === 0 ? "24px" : breakpoint === 1 ? "28px" : "32px"};

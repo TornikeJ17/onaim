@@ -7,7 +7,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isActive, setIsActive }) => {
     const handleClick = (id: number) => {
         if (id) setIsActive(id);
     };
-    console.log(isActive, "isActive");
     return (
         <Container>
             <div>{mainLogo}</div>

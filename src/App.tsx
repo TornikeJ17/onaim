@@ -3,9 +3,11 @@ import { useResponsiveTSX } from "./useResponsive";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Navbar from "./Components/Navbar/Navbar";
 import Section from "./Components/Section/Section";
+import { AppContainer } from "./styles/Style";
+import MobileNav from "./Components/Navbar/MobileNav/MobileNav";
 
 const App: React.FC = () => {
-    const breakpoint = useResponsiveTSX([600, 1024, 1440, 1920]); // This will return 0 for mobile, 1 for tablet, 2 for desktop, and 3 for large desktop
+    const breakpoint = useResponsiveTSX([600, 1024, 1440, 1920]);
     const [isActive, setIsActive] = useState<number | null>(null);
     const [tabMenuActive, setTabMenuActive] = useState<number | null>(null);
     const [gameTabMenuActive, setGameTabMenuActive] = useState<number | null>(
@@ -16,14 +18,23 @@ const App: React.FC = () => {
     >(null);
 
     return (
-        <div className={`App breakpoint-${breakpoint}`}>
+        <AppContainer breakpoint={breakpoint}>
             <>
                 <div>
                     {" "}
-                    <Sidebar isActive={isActive} setIsActive={setIsActive} />
+                    {breakpoint !== 0 && breakpoint !== 1 && (
+                        <Sidebar
+                            isActive={isActive}
+                            setIsActive={setIsActive}
+                        />
+                    )}
                 </div>
                 <div className="block2">
-                    <Navbar />
+                    {breakpoint !== 0 && breakpoint !== 1 ? (
+                        <Navbar />
+                    ) : (
+                        <MobileNav breakpoint={breakpoint} />
+                    )}
                     <Section
                         tabMenuActive={tabMenuActive}
                         setTabMenuActive={setTabMenuActive}
@@ -31,10 +42,11 @@ const App: React.FC = () => {
                         setGameTabMenuActive={setGameTabMenuActive}
                         leaderboardTabActive={leaderboardTabActive}
                         setLeaderboardTabActive={setLeaderboardTabActive}
+                        breakpoint={breakpoint}
                     />
                 </div>
             </>
-        </div>
+        </AppContainer>
     );
 };
 

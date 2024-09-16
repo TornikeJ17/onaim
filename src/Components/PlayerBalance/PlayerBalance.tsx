@@ -6,10 +6,11 @@ import {
     SeeMore,
 } from "./PlayerBalanceStyles";
 import { gameSVG } from "../../API/game";
+import { PlayerBalanceProps } from "./PlayerBalanceInterface";
 
-const PlayerBalance: React.FC = () => {
+const PlayerBalance: React.FC<PlayerBalanceProps> = ({ breakpoint }) => {
     return (
-        <PlayerBalanceContainer>
+        <PlayerBalanceContainer breakpoint={breakpoint}>
             <h2>Player's Balance</h2>
             <BalanceInfo>
                 <div>

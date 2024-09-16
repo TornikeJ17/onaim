@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const GamesContainer = styled.div`
-    width: 100%;
+export const GamesContainer = styled.div<{ breakpoint: number }>`
+    width: ${({ breakpoint }) => (breakpoint === 0 ? "77%" : "100%")};
     border-radius: 16px;
     background-color: #062733;
     grid-column: 1/1;
@@ -18,10 +18,13 @@ export const Title = styled.div`
     line-height: 32.4px;
     text-align: left;
 `;
-export const GameGrid = styled.div`
+export const GameGrid = styled.div<{ breakpoint: number }>`
     grid-column: 1 / 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: ${({ breakpoint }) =>
+        breakpoint === 0
+            ? "repeat(auto-fill, minmax(400px, -1fr))"
+            : "repeat(auto-fill, minmax(400px, 1fr))"};
     grid-gap: 20px;
     padding: 20px;
 `;

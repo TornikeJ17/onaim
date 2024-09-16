@@ -17,10 +17,9 @@ import {
 import { missionsList } from "../../API/missions";
 import { gameSVG } from "../../API/game";
 import { useResponsiveTSX } from "../../useResponsive";
+import { MissionProps } from "./MissionInterface";
 
-const Missions: React.FC = () => {
-    const breakpoint = useResponsiveTSX([600, 1024, 1440, 1920]);
-
+const Missions: React.FC<MissionProps> = ({ breakpoint }) => {
     return (
         <MissionContainer breakpoint={breakpoint}>
             <TitleBlock>

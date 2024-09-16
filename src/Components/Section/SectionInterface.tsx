@@ -5,6 +5,7 @@ interface SectionProps {
     setGameTabMenuActive: (id: number) => void;
     leaderboardTabActive: number | null;
     setLeaderboardTabActive: (id: number) => void;
+    breakpoint: number;
 }
 
 export type { SectionProps };

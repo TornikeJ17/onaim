@@ -13,17 +13,19 @@ import GamesTab from "./GamesTab/GamesTab";
 const Games: React.FC<GamesProps> = ({
     gameTabMenuActive,
     setGameTabMenuActive,
+    breakpoint,
 }) => {
     return (
-        <GamesContainer>
+        <GamesContainer breakpoint={breakpoint}>
             <TitleBlock>
                 <Title>Game</Title>
                 <GamesTab
+                    breakpoint={breakpoint}
                     gameTabMenuActive={gameTabMenuActive}
                     setGameTabMenuActive={setGameTabMenuActive}
                 />
             </TitleBlock>
-            <GameGrid>
+            <GameGrid breakpoint={breakpoint}>
                 {gameList.map((item, index) => (
                     <GameCard>
                         <img src={String(item.img)} />

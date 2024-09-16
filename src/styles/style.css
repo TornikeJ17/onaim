@@ -6,17 +6,3 @@ body {
     margin: 0;
     padding: 0;
 }
-
-.App {
-    display: grid;
-    grid-template-columns: 79px 1fr;
-    grid-template-rows: auto 1fr;
-    height: 100vh;
-    overflow: hidden;
-}
-.block2 {
-    overflow-y: scroll;
-}
-.block2::-webkit-scrollbar {
-    display: none;
-}

@@ -6,6 +6,7 @@ import { LeaderboardContainer, LeaderboardItem } from "./LeaderboardStyles";
 const LeaderboardTab: React.FC<LeaderboardTabProps> = ({
     leaderboardTabActive,
     setLeaderboardTabActive,
+    breakpoint,
 }) => {
     useEffect(() => {
         setLeaderboardTabActive(1);
@@ -14,9 +15,10 @@ const LeaderboardTab: React.FC<LeaderboardTabProps> = ({
         if (id) setLeaderboardTabActive(id);
     };
     return (
-        <LeaderboardContainer>
+        <LeaderboardContainer breakpoint={breakpoint}>
             {leaderBoardTab.map((item, index) => (
                 <LeaderboardItem
+                    breakpoint={breakpoint}
                     leaderboardTabActive={leaderboardTabActive === item.id}
                     onClick={() => handleClick(item.id)}
                     key={index}
